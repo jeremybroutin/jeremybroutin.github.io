@@ -1,4 +1,4 @@
-# jeremybroutin.github.io
+# Jeremy Broutin, Swifting
 
 Welcome to my personal blog!  
 I'm publishing weekly posts about what I learn on Swift and/or iOS development.  
