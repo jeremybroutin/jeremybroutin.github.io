@@ -23,7 +23,6 @@ date: 2017-03-27
      <li> and more that I'm yet to explore and fully understand.</li>
   </ul>
   </li>
-  <br />
 	<li> <strong>Code habits</strong>: writing your tests even before you write your production code. This is something completely new to me but I do see the idea here. This concept was introduced to me by Essential Developers in their TDD (<strong>Test Driven Development</strong>) <a href="https://www.youtube.com/playlist?list=PLyjgjmI1UzlSUlaQD0RvLwwW-LSlJn-F6" target="_blank">YouTube series</a>. The two developers, Caoi and Mike, share weekly videos on how they go about building an app from the idea until the full code completion, demonstrating:
   <blockquote> the discipline of test driven development, the power of modular systems, and how to welcome future requirements.</blockquote>
   Each week covers a new topic from storyboard prototyping to testing, swift closures and recursion, retain cycles, or writing a framework.</li>
