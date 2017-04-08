@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "5 things I learned this week #2"
-date: 2017-03-10
+date: 2017-03-21
 ---
 <h1>{{ page.title }}</h1>
 <p class="meta">{{ page.date | date_to_string }}</p>
