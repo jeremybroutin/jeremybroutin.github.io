@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review of debugging options"
+title: "5 things I learned this week #2"
 date: 2017-03-10
 ---
 <h1>{{ page.title }}</h1>
