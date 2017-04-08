@@ -1,5 +1,5 @@
 name: Jeremy Broutin, Swifting
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title
+permalink: /:year/:month/:day/:title
 
 theme: jekyll-theme-minimal
