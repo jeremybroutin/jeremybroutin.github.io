@@ -3,6 +3,8 @@ layout: post
 title: "Review of debugging options"
 date: 2017-03-10
 ---
+<h1>{{ page.title }}</h1>
+<p class="meta">{{ page.date | date_to_string }}</p>
 <p>Coming in a bit late due to some travels to New York and then to India over the last couple of days but here we are:
 <ol>
 	<li>Basic <strong>Unit Testing</strong> and the use of the XCTest library to assert critical methods from simple projects we had previously built within the University of Washington <a href="https://www.pce.uw.edu/certificates/ios-application-development" target="_blank">iOS Certificate</a>. To deepen my understanding of Unit Testing, I have also started the <a href="https://www.raywenderlich.com/150073/ios-unit-testing-and-ui-testing-tutorial" target="_blank">Ray Wenderlich dedicated tutorial</a> which goes further with the use of stubs, mock objects, UI testing and performance testing. A new programming skill from which I just started to scratch the surface!</li>
