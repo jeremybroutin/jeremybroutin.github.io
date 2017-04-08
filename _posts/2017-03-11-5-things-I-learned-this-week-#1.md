@@ -3,7 +3,8 @@ layout: post
 title: "5 things I learned this week #1"
 date: 2017-03-11
 ---
-
+<h1>{{ page.title }}</h1>
+<p class="meta">{{ page.date | date_to_string }}</p>
 <p>I'm starting this series of weekly posts to highlight 5 things I recently learned.  
 The concept is to explain each new learning in a one liner and to link to the original source or any related resource.</p>
 <ol>
