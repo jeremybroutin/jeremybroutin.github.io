@@ -20,6 +20,7 @@ This week I spent a lot of time on one particular topic which is not directly re
 	- Nil is slightly different as it is a class pointer and the author does mention that we don't see this one very often.
 	- NULL simply represents "nothing" for pointers
 	- NSNull is a class pointer (like Nil) and therefore an actual object (singleton object actually) used to represent null. It can be particularly useful in building dictionaries with null values, since value for a specific key cannot actually be null (but can be NSNull!)
+	
 	```
 	let myNullObject = NSNull()
 	var dict = [
