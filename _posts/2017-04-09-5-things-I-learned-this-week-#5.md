@@ -1,5 +1,13 @@
+---
+layout: post
+title: "5 things I learned this week #5"
+date: 2017-04-09
+---
+<h1>{{ page.title }}</h1>
+<p class="meta">{{ page.date | date_to_string }}</p>
+
 This week I spent a lot of time on one particular topic which is not directly related to Swift but yet still relevant from a mobile app development perspective.  
-- MachineZonejust released a new live data feeds API called **[Satori] (https://www.satori.com)**. This API provides live data of existing channels such as GitHub, Twitter or Weather feeds and also enable people to create their own. Simply subscribe to an existing channel and you will start receiving live data! I've started to test it with a few channels to get and store data, that my apps can use to display useful information.
+- MachineZonejust released a **new live data feeds API** called [Satori](https://www.satori.com). This API provides live data of existing channels such as GitHub, Twitter or Weather feeds and also enable people to create their own. Simply subscribe to an existing channel and you will start receiving live data! I've started to test it with a few channels to get and store data, that my apps can use to display useful information.
 
 - **Firebase Functions**: Firebase offers Cloud functions capabilities to react to key information within the app and trigger any remote work on Google Cloud (Firebase is built on top of Google Cloud). This is both extremely simple and powerful to execute heavy functions outside of your app and pass whatever outputs back to it, while leveragign the computing power of Google. A couple of use cases include:
 	- entry modification when written into the Firebase Realtime database
