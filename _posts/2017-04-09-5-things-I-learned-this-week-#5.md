@@ -18,5 +18,10 @@ This week I spent a lot of time on one particular topic which is not directly re
 	print(dict["key"]!)
 	// dictionary can be built and print statement gives <null>
 	</code>
-- Topic 4
-- Topic 5
+- *Static vs dynamic library*: as Swift supports dynamic libraries vs its Objective-C predecessor who only supports static ones, I took on the task to better understand the difference between static and dynamic.
+	- A static library (which uses the file extension .a) is the result of the linker (called by the compiler to make code of library functions available to the program) making copy of all used library functions to the executable file. It usually results in larger binary file, needs more space on disk and main memory  and has a slower launch time. It also requires to be rebuilt for any update to the library, since it is added directly to the linked target's binary.
+	- For a dynamic library, none of it's code is included in the linked target (only a reference to the library exists). Functions are instead loaded into memory at run time, which allows for easy updates to the library such as new features or bug fixes (no need to recompile and relink the library). Dynamic libraries have associated search paths to help the linker find where they are located on teh file system and load them.
+- While I was reading about static vs dynamic libraries, another learning came out: *library vs framework*.
+	- Simply put, a library is a packaged collection of object files that program can link against. As hihglighted above, a library can be static or dynamic (also called shared sometimes). It only has executable code.
+	- A framework is a bundle that contains shared libraries and other resources and/or sub directories. In addition to carry the library code, it can also include documentation files, views, assets, controls, etc.
+  A key difference between library and framework is the control ownership. The programmer is "in control" when calling code from a library, but there is an inversion of control (similar to dependency injection) when using a framework. The framework is now responsible for "doing stuff" in response to event handlers provided by the main program.
