@@ -20,7 +20,7 @@ This week I spent a lot of time on one particular topic which is not directly re
 	- Nil is slightly different as it is a class pointer and the author does mention that we don't see this one very often.
 	- NULL simply represents "nothing" for pointers
 	- NSNull is a class pointer (like Nil) and therefore an actual object (singleton object actually) used to represent null. It can be particularly useful in building dictionaries with null values, since value for a specific key cannot actually be null (but can be NSNull!)
-	
+
 	```
 	let myNullObject = NSNull()
 	var dict = [
@@ -37,4 +37,5 @@ This week I spent a lot of time on one particular topic which is not directly re
 - While I was reading about static vs dynamic libraries, another learning came out: **library vs framework**.
 	- Simply put, a library is a packaged collection of object files that program can link against. As hihglighted above, a library can be static or dynamic (also called shared sometimes). It only has executable code.
 	- A framework is a bundle that contains shared libraries and other resources and/or sub directories. In addition to carry the library code, it can also include documentation files, views, assets, controls, etc.  
+	
   A key difference between library and framework is the control ownership. The programmer is "in control" when calling code from a library, but there is an inversion of control (similar to dependency injection) when using a framework. The framework is now responsible for "doing stuff" in response to event handlers provided by the main program.
