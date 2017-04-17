@@ -21,9 +21,7 @@ It brings many benefits over OOP such as avoiding deep pyramidal structures betw
 - Talking about protocol... In a [blog post last week][8], Josh Smith demonstarted how to leverage the [Swift's Mirror API][9] to facilitate access to the properties of struct objects (`AdressBookContact` and `FaceBookContact`) as part of an Enum (`Contact`). The result is a simple **ReflectableEnum protocol**, that ease up the implementation but which has to be used with caution:
 	- it relies on a strict naming convention, as the property in the `Contact` enum have to be the exact same as the ones in the Structs
 	- the protocol forces unwrap optional values, which means that the program would crash if the point above is not respected for instance
-- **Debug print** and why we should be careful with logging in production code: I recently heard about debugPrint and found it handy to enhance my debugging skills a little bit. debugPrint is more powerful than the regular print as it:
-> writes the textual representations of the given items [...] - _Apple's own definition_.
-
+- **Debug print** and why we should be careful with logging in production code: I recently heard about debugPrint and found it handy to enhance my debugging skills a little bit. debugPrint is more powerful than the regular print as it _"writes the textual representations of the given items [...]"_ - (Apple's own definition).  
 While I learned about debugPrint, I also understood the reason why we should not leave any logging statement in production code: optimization and therefore speed.  
 Kostiantyn Koval highlighted in this [blog post][10] how a simple print statement left inside a for loop can prevent optimizations from the Swift compiler.
 - **[Secrets of Swift's Speed][11]**, written by Mike Ash exposes different speculations regarding what makes Swift so... swift. The article is a bit old (2014) and Swift has evolved a lot since then, but the basics exposed here are still valid. So the secrets of Swift's speed are:
