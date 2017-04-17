@@ -3,7 +3,7 @@ layout: default
 title: Jeremy Broutin, Swifting
 ---
 	<h1>{{ page.title }}</h1>
-	<p>Simple Swift journal for me to write things I learn about Swift and iOS development in general on a weekly basis. I found that writing summaries and/or notes about the different articles I read help to improve my own understanding and to better memorize the information.</p>
+	<p>Simple Swift journal for me to write things I learn about Swift and iOS development in general on a weekly basis. I found that writing notes about the different articles I read help to improve my own understanding and to better memorize the information.</p>
 	<ul>
 	  {% for post in site.posts %}
 	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
