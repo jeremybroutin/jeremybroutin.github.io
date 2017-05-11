@@ -14,9 +14,9 @@ Time is scarse these last couple of weeks so let's dive right in!
 	- avoid state aka not creating temporary variable or constant (immutable state).
 	- rely on pure functions, each function has one and only one purpose and has no side effects.
 In Swift, a couple of tools can greatly help us think and build functional code:
-  	- map, that allows to iterate over each element of an array of dictionary and apply a specific function on each element.
-  	- filter, that allows to return a filtered list of elements based on a function passed in the closure and against which each element of the array is evaluated.
-  	- reduce, which is a simple way to return a single value of out of an array, by concatenating strings or summing up ints for instance.
+  	- `map`, that allows to iterate over each element of an array of dictionary and apply a specific function on each element.
+  	- `filter`, that allows to return a filtered list of elements based on a function passed in the closure and against which each element of the array is evaluated.
+  	- `reduce`, which is a simple way to return a single value of out of an array, by concatenating strings or summing up ints for instance.
 These are called high order functions and are first class citizens in functional programming languages. High order functions accept other functions as parameter and/or return functions as well.
 
 - To pass elements from one class to another, several options exists (notifications, KVO...) but one of the most common is to use the **delegate pattern**. Let's say for instance that you want to pass data from a `store` class that is charged with retrieving data from iCloud into your `viewController` class. 
@@ -35,7 +35,7 @@ These are called high order functions and are first class citizens in functional
 	```
 This [StackOverflow response about Swift delegates in Swift 3][1] is extremely good and detailed.
 
-- **iCloud Key Value STore** is an extremely simple way to store small bites of information in the cloud, allowing for instance a user to sync its app preferences or latest changes across all of her devices (iPhone and iPad for instance). Using the NSUbiquitousKeyValueStore, it is extremely simple to store string, double or object:
+- **iCloud Key Value Store** is an extremely simple way to store small bites of information in the cloud, allowing for instance a user to sync its app preferences or latest changes across all of her devices (iPhone and iPad for instance). Using the NSUbiquitousKeyValueStore, it is extremely simple to store string, double or object:
 ```
 var iCloudKeyStore = NSUbiquitousKeyValueStore()
 iCloudKeyStore.setString("valueToBeStored", forKey: "myKeyString")
