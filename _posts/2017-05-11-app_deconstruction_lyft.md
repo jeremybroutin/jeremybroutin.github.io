@@ -53,22 +53,7 @@ Some minor improvements I could think of would be to:
 
 
 ## App behaviors deconstruction
-What happens when there's no network?
-What happens when you deny permission requests (camera, location, microphone, etc)?
-What would the data model look like?
-What backend services are involved? What do those services need to provide?
-What are the underlying frameworks?
-What's a better noun for the user than "user"? (pilot, skipper, driver, parent, fan, traveler, reader, shopper, listener, artist)
-Where are some nonobvious uses of table views, collection views, other simple UIKit elements?
-Where are webviews used?
-What custom UI (not available in IB, or not available at all with standard UIKit) is used? How would you implement it?
-What's an effect/animation that you can't figure out how to do?
-What are some helpful or interesting uses of animations? What are some inappropriate animations?
-What HIG violations do you see?
-What security implications do you see?
-Where does the user-created data live? Who owns it? What are the privacy implications?
-What are the ethical implications for a developer or a designer working on this app?
-What's the business model? How does the publisher make money?
+[...]
 
 
 [1]: https://www.lyft.com/
