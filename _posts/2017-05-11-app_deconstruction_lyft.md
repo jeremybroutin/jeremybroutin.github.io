@@ -6,7 +6,7 @@ date: 2017-05-11
 <h1>{{ page.title }}</h1>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
-This post is a work in progress, thanks for your patience.
+_This post is a work in progress, thanks for your patience._
 
 ## Introduction
 ### What does the app do?
