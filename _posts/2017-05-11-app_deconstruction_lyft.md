@@ -31,8 +31,7 @@ Lyft is very simple and its usage is extremely intuitive, proving an excellent d
 It is easy to quickly understand how it works and to complete the expected action (order a ride), without the need for a help section or other tips given by the app.
 One particular UI feature that I really like with Lyft is the fact that the pick up location Pin (MKAnnotation) is "fixed" on the map, allowing the users to simplify adjust the map to their desired location instead of dragging the pin (which would be cumbersome if you need to zoom or unzoom for instance).
 
-[[https://github.com/jeremybroutin/jeremybroutin.github.io/blob/master/_images/lyft_app_main_view.png|alt=Lyft]]
-
+![lyft_app_main_view](https://cloud.githubusercontent.com/assets/8300361/25978189/a56c3196-3675-11e7-942b-00fec35d5e2b.png)
 
 ### What would you steal?
 There are a couple of small features that I would definitely try to reproduce:
