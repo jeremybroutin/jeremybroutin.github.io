@@ -8,6 +8,9 @@ date: 2017-05-11
 
 _This post is a work in progress, thanks for your patience._
 
+As part of an ongoing university professional certificate on iOS development, we have been tasked to analyze an app of our choice and to deconstruct it.  
+A list of sample questions were provided to guide our review, and I chose to group them under the categories exposed below.
+
 ## Introduction
 ### What does the app do?
 [Lyft][1] is a transportation network company (source [Wikipedia][2]) or in other words, an on-demand ride sharing servide provider.
@@ -51,9 +54,43 @@ Some minor improvements I could think of would be to:
 - customize the default user profile picture to something a bit more fun (and add additional encouragements when the user creates an account, detailling the benefits of adding a picture)
 - change the location of the edit profile button to the bottom of its view controller
 
+## App deconstruction
 
-## App behaviors deconstruction
-[...]
+### What would the data model look like?
+
+There are several models that probably exist in the Lyft app:
+- One representing the user, which will include its identification and personal information (stored credit card for instance)
+- One more model exists for the selected driver, that will pick the user. This model would carry all of the driver's information such as name, car model, and review score.
+- Finally, Lyft probably includes a model for a ride, that includes references to both driver and rider, the route's source, origin, date and length as well as the cost associated and any reviews.
+
+### Where does the user-created data live? Who owns it? What are the privacy implications?
+
+There are only two types of user-created data in the Lyft app:
+- the user profile information
+- the reviews given to the drivers
+All of this data is stored in the Cloud (or potentially on Lyft servers), and not on the user's device directly.  
+This allows a user to easily change phone without losing its information or historic rides.
+
+In terms of ownership and privacy, the user is the owner of her personal data, and should have read, edit and delete access to it at any time.  
+Lyft must provide a clear privacy policy (to which the user agrees when using the app) and which states how the personal information might or might not be shared with 3rd party companies for advertising purposes.
+
+### What backend services are involved? What do those services need to provide?
+
+In terms of backend infrastructure, Lyft must call some sort of real time database in order to:
+- retrieve the user's information
+- retrieve the currently online drivers and their live locations (as well as keeping those constantly updated)
+The first set of data returned is "static" meaning that a one-off call is sufficient for the entire time the user will be in the app.  
+The second however could be pretty expensive in terms of bandwith and battery on the user end, and I would safely assume that both user and drivers locations are only updated when the app is awake and in the foreground.
+
+## UI analysis
+
+### What custom UI is used ? How you would implement it?
+
+### What are some helpful or interesting uses of animations? Any inappropriate ones?
+
+### What's an effect/animation that you cannot figure out how to do?
+
+
 
 
 [1]: https://www.lyft.com/
