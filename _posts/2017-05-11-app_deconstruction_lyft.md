@@ -8,8 +8,7 @@ date: 2017-05-11
 
 _This post is a work in progress, thanks for your patience._
 
-As part of an ongoing university professional certificate on iOS development, we have been tasked to analyze an app of our choice and to deconstruct it.  
-A list of sample questions were provided to guide our review, and I chose to group them under the categories exposed below.
+As part of an ongoing university professional certificate on iOS development, we have been tasked to analyze an app of our choice and to deconstruct it. A list of sample questions were provided to guide our review, and I chose to group them under the categories exposed below.
 
 ## Introduction
 ### What does the app do?
@@ -86,12 +85,31 @@ The second however could be pretty expensive in terms of bandwith and battery on
 
 ### What custom UI is used ? How you would implement it?
 
-### What are some helpful or interesting uses of animations? Any inappropriate ones?
+- The main interface relies on GMSMapView, which is provided by the Google Maps SDK.  
+- Lyft then adds the ride ordering process in a custom UIView that overlays the mapView.
+![lyft_app_main_view](https://cloud.githubusercontent.com/assets/8300361/25978189/a56c3196-3675-11e7-942b-00fec35d5e2b.png)
+
+- Interacting with this overlay triggers a modal View Controller, which includes a [tableview][4] with multiple sections:
+	- The first three sections are static
+	- The fourth is dynamic based on the automated results provided by Google (in relation with the current user location)
+- In addition to this main interaction channel (mapView and overlay views), Lyft also provide a slide bar menu on the left  [insert screenshot]
+	- This menu is also a simple static tableview with a cell for each navigation item, as well as a header (the user profile) and a footer (promotion to become a driver)
+	- This tableview is displayed upon the interaction with a button in the main viewcontroller, and can be dismissed use a [swipe right gesture][3]
+
+### What are some helpful or interesting uses of animations?
+
+One the additional feature provided by Lyft is the ability to order different types of rides: Line (shared route), Lyft, Plus (large vehicle), Premier (deluxe option).  
+The Lyft app leverages a very useful animation to show and hide the view carrying this animation which expands and retracts to its original button, basically guiding the user as to where to find these options. I believe such animation to managed via a [UIPopoverController][5]. 
+The view is displayed automatically when the app is opened, and retracts automatically as the user starts interacting with the map, therefore not disturbing the user experience when the content of the displayed view is not needed.  
+![lyft_app_main_view](https://cloud.githubusercontent.com/assets/8300361/25978189/a56c3196-3675-11e7-942b-00fec35d5e2b.png)
 
 ### What's an effect/animation that you cannot figure out how to do?
 
-
+When the user choses to display the menu (left hand side navigation items), the main view (that contains the mapView) size is reduced, giving an impression of a "stack" and therefore reinforcing the priority of the menu view on top of the main view. This effect, combined with the display of the menu view, would be something requiring much investigation on my end to achieve.
 
 
 [1]: https://www.lyft.com/
 [2]: https://en.wikipedia.org/wiki/Lyft
+[3]: https://developer.apple.com/reference/uikit/uiswipegesturerecognizerappl
+[4]: https://developer.apple.com/reference/uikit/uitableview
+[5]: https://developer.apple.com/reference/uikit/uipopovercontroller
