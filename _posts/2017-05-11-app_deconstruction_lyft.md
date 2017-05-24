@@ -6,8 +6,6 @@ date: 2017-05-11
 <h1>{{ page.title }}</h1>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
-_This post is a work in progress, thanks for your patience._
-
 As part of an ongoing university professional certificate on iOS development, we have been tasked to analyze an app of our choice and to deconstruct it. A list of sample questions were provided to guide our review, and I chose to group them under the categories exposed below.
 
 ## Introduction
@@ -35,7 +33,7 @@ One particular UI feature that I really like with Lyft is the fact that the pick
 
 ![lyft_app_main_view](https://cloud.githubusercontent.com/assets/8300361/25978189/a56c3196-3675-11e7-942b-00fec35d5e2b.png)
 
-### What would you steal?
+### What would you "steal"?
 There are a couple of small features that I would definitely try to reproduce:
 - the navigation between view controllers which is managed by a small and simple arrow on top of the main summary view, on the lower half of the screen
 - the modal presentation of the trip cost summary (some sort of translucid background with a subview acting like a pop up rising from the bottom of the screen)
@@ -86,8 +84,9 @@ The second however could be pretty expensive in terms of bandwith and battery on
 ### What custom UI is used ? How you would implement it?
 
 - The main interface relies on GMSMapView, which is provided by the Google Maps SDK.  
-- Lyft then adds the ride ordering process in a custom UIView that overlays the mapView.
-![lyft_app_main_view](https://cloud.githubusercontent.com/assets/8300361/25978189/a56c3196-3675-11e7-942b-00fec35d5e2b.png)
+- Lyft then adds the ride ordering process in a custom UIView that overlays the mapView.  
+
+![lyft_overlay](https://cloud.githubusercontent.com/assets/8300361/26422104/59ed1124-407d-11e7-851d-1f304e21ba67.PNG)
 
 - Interacting with this overlay triggers a modal View Controller, which includes a [tableview][4] with multiple sections:
 	- The first three sections are static
@@ -98,10 +97,10 @@ The second however could be pretty expensive in terms of bandwith and battery on
 
 ### What are some helpful or interesting uses of animations?
 
-One the additional feature provided by Lyft is the ability to order different types of rides: Line (shared route), Lyft, Plus (large vehicle), Premier (deluxe option).  
-The Lyft app leverages a very useful animation to show and hide the view carrying this animation which expands and retracts to its original button, basically guiding the user as to where to find these options. I believe such animation to managed via a [UIPopoverController][5]. 
+One the additional feature provided by Lyft is the ability to order different types of rides: Line (shared route), Lyft, Plus (large vehicle), Premier (deluxe option). The Lyft app leverages a very useful animation to show and hide the view carrying this animation which expands and retracts to its original button, basically guiding the user as to where to find these options. I believe such animation to managed via a [UIPopoverController][5].  
 The view is displayed automatically when the app is opened, and retracts automatically as the user starts interacting with the map, therefore not disturbing the user experience when the content of the displayed view is not needed.  
-![lyft_app_main_view](https://cloud.githubusercontent.com/assets/8300361/25978189/a56c3196-3675-11e7-942b-00fec35d5e2b.png)
+
+![lyft_anim](https://cloud.githubusercontent.com/assets/8300361/26422103/59d765a4-407d-11e7-9d88-9b9a398a3ecb.PNG)
 
 ### What's an effect/animation that you cannot figure out how to do?
 
