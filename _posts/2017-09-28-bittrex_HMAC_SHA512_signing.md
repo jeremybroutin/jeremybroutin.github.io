@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bittrex API - HMAC-SHA512 Signing"
-date: 2017-05-24
+date: 2017-09-28
 ---
 <h1>{{ page.title }}</h1>
 <p class="meta">{{ page.date | date_to_string }}</p>
@@ -29,6 +29,10 @@ The way to apply this encoding in Swift is to leverage two "well known" framewor
 
 Here is a sample function that can be used to retrieve the JSON data out the Bittrex API /getbalances endpoint:
 ```swift
+import Alamofire
+import CryptoSwift
+...
+
 func getBittrexAccountBalances() {
     // Necessary parameters for HTTP request and headers
     let apiKey = "your_api_key"
@@ -46,21 +50,33 @@ func getBittrexAccountBalances() {
 
     // Pass HMAC within HTTP Headers
     let authHeaders = [
-      "apisign": hmacString
+      	"apisign": hmacString
     ] as HTTPHeaders
 
     // Execute HTTP request with headers to get JSON data
     Alamofire.request(urlString, headers: authHeaders).responseJSON { (response) in
-      if let result = response.result.value {
-        let balances = result as! NSDictionary
-        print("Balances: \(balances)")
-      } else {
-        print("response.result.value is nil")
-      }
+    	if let result = response.result.value {
+        	let balances = result as! NSDictionary
+        	print("Balances: \(balances)")
+      	} else {
+        	print("response.result.value is nil")
+      	}
     }
-  }
+}
+```
+
+Last but not least, you will also have to add an extension to the Data type in order to convert your HMAC data to an **hex string** (see `hmacData.hex` in the above code).
+There are multilple ways to achieve this conversion, as highlighted in this [StackOverflow thread][4] and here is the one I chose:
+
+```swift
+extension Data {
+  	var hex: String {
+    	return self.map { b in String(format: "%02X", b) }.joined()
+  	}
+}
 ```
 
 [1]: https://cocoapods.org/pods/CryptoSwift
 [2]: https://cocoapods.org/pods/Alamofire
 [3]: https://www.pce.uw.edu/certificates/ios-application-development
+[4]: https://stackoverflow.com/questions/7520615/how-to-convert-an-nsdata-into-an-nsstring-hex-string/38131414#38131414
