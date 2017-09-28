@@ -71,7 +71,7 @@ There are multilple ways to achieve this conversion, as highlighted in this [Sta
 ```swift
 extension Data {
   	var hex: String {
-    	return self.map { b in String(format: "%02X", b) }.joined()
+  		return self.map { b in String(format: "%02X", b) }.joined()
   	}
 }
 ```
